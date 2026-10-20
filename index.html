@@ -32,10 +32,10 @@
     --cyan: #37D9CE;
     --grad: linear-gradient(120deg, var(--violet), var(--cyan));
   }
- 
+
   *{ box-sizing: border-box; margin:0; padding:0; }
   html{ scroll-behavior: smooth; }
- 
+
   body{
     background: var(--bg);
     color: var(--ink);
@@ -45,7 +45,7 @@
     overflow-x: hidden;
     position: relative;
   }
- 
+
   /* subtle grain for texture, not flat */
   body::before{
     content:"";
@@ -56,11 +56,11 @@
     opacity: 0.035;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
- 
+
   a{ color: inherit; text-decoration: none; }
- 
+
   .wrap{ max-width: 1100px; margin: 0 auto; padding: 0 32px; }
- 
+
   h1, h2, h3{
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 600;
@@ -68,9 +68,9 @@
     color: var(--ink);
   }
   .mono{ font-family: 'JetBrains Mono', monospace; }
- 
+
   ::selection{ background: rgba(139,107,255,0.35); color: #fff; }
- 
+
   @keyframes fade-up{
     from{ opacity: 0; transform: translateY(26px); }
     to{ opacity: 1; transform: translateY(0); }
@@ -87,7 +87,7 @@
     0%{ background-position: -200% 0; }
     100%{ background-position: 200% 0; }
   }
- 
+
   .reveal{
     opacity: 0;
     transform: translateY(28px);
@@ -97,12 +97,12 @@
   .reveal-1.in-view{ transition-delay: .06s; }
   .reveal-2.in-view{ transition-delay: .14s; }
   .reveal-3.in-view{ transition-delay: .22s; }
- 
+
   @media (prefers-reduced-motion: reduce){
     .reveal{ opacity: 1; transform: none; transition: none; }
     *{ animation: none !important; }
   }
- 
+
   /* ---------- NAV ---------- */
   nav{
     position: sticky; top: 0; z-index: 60;
@@ -130,7 +130,7 @@
     border-radius: 100px; transition: border-color 0.25s, background 0.25s, transform 0.25s;
   }
   .nav-cta:hover{ border-color: transparent; background: var(--grad); color: #06070B; transform: translateY(-1px); font-weight: 600; }
- 
+
   /* ---------- HERO ---------- */
   header.hero{
     position: relative;
@@ -147,7 +147,7 @@
   }
   .blob-1{ width: 480px; height: 480px; background: var(--violet); top: -180px; right: -120px; }
   .blob-2{ width: 380px; height: 380px; background: var(--cyan); bottom: -160px; left: -100px; opacity: 0.32; animation-delay: -6s; }
- 
+
   .glow-cursor{
     position: absolute;
     width: 480px; height: 480px;
@@ -159,7 +159,7 @@
     opacity: 0;
     z-index: 0;
   }
- 
+
   .hero-grid{
     position: relative; z-index: 2;
     display: grid;
@@ -167,7 +167,7 @@
     gap: 64px;
     align-items: center;
   }
- 
+
   .eyebrow-tag{
     display:inline-flex; align-items:center; gap: 8px;
     padding: 6px 14px;
@@ -183,7 +183,7 @@
     width: 6px; height: 6px; border-radius: 50%; background: var(--cyan);
     animation: pulse-dot 1.8s ease-out infinite;
   }
- 
+
   .hero h1{
     margin-top: 24px;
     font-size: clamp(2.6rem, 5vw, 4.1rem);
@@ -208,7 +208,7 @@
     margin-top: 36px; display:flex; gap: 14px;
     opacity: 0; animation: fade-up 0.8s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: 0.4s;
   }
- 
+
   .btn{
     display:inline-flex; align-items:center; gap: 8px;
     padding: 13px 24px; font-size: 0.92rem; font-weight: 500;
@@ -219,7 +219,7 @@
   .btn-primary:hover{ transform: translateY(-2px); box-shadow: 0 12px 30px rgba(139,107,255,0.35); }
   .btn-secondary{ border: 1px solid var(--line); color: var(--ink); }
   .btn-secondary:hover{ border-color: rgba(255,255,255,0.3); transform: translateY(-2px); }
- 
+
   /* spec card */
   .spec-card{
     position: relative; z-index: 2;
@@ -244,11 +244,11 @@
   .spec-row:last-child{ border-bottom: none; }
   .spec-key{ color: var(--ink-muted); }
   .spec-val{ text-align: right; font-weight: 500; }
- 
+
   @media (prefers-reduced-motion: reduce){
     .eyebrow-tag, .hero h1, .hero .role-line, .hero .actions, .spec-card{ animation: none; opacity: 1; }
   }
- 
+
   /* ---------- SECTION SHELL ---------- */
   section{ padding: 110px 0; position: relative; }
   .section-head{
@@ -261,8 +261,8 @@
   }
   .section-head h2{ font-size: 2rem; }
   .section-note{ color: var(--ink-muted); font-size: 0.94rem; max-width: 30ch; text-align: right; }
- 
- 
+
+
   /* ---------- STACK ---------- */
   .stack-grid{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .stack-col{
@@ -284,7 +284,7 @@
   .stack-col li:last-child{ border-bottom: none; }
   .stack-col li:hover{ color: var(--ink); padding-left: 4px; }
   .stack-col li span.lvl{ color: var(--col-accent, var(--violet)); font-size: 0.78rem; font-weight: 500; }
- 
+
   /* ---------- EXPERIENCE ---------- */
   .timeline{ position: relative; padding-left: 32px; }
   .timeline::before{
@@ -306,7 +306,7 @@
   .tl-item h3{ font-size: 1.12rem; margin-top: 5px; }
   .tl-item .org{ color: var(--ink-muted); font-size: 0.92rem; margin-top: 2px; }
   .tl-item p.desc{ margin-top: 12px; font-size: 0.92rem; color: var(--ink-muted); max-width: 60ch; }
- 
+
   /* ---------- CONTACT ---------- */
   .contact-panel{
     position: relative;
@@ -321,10 +321,10 @@
   .contact-panel h2{ font-size: 2.1rem; max-width: 20ch; margin: 0 auto; position: relative; z-index: 1; }
   .contact-panel .sub{ color: var(--ink-muted); margin-top: 14px; position: relative; z-index: 1; }
   .contact-links{ display:flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 30px; position: relative; z-index: 1; }
- 
+
   footer{ padding: 36px 0 50px; border-top: 1px solid var(--line-soft); margin-top: 40px; }
   footer .wrap{ display:flex; justify-content: space-between; color: var(--ink-faint); font-size: 0.82rem; }
- 
+
   @media (max-width: 760px){
     .hero-grid{ grid-template-columns: 1fr; }
     .stack-grid{ grid-template-columns: 1fr; }
@@ -333,7 +333,7 @@
     .nav-links{ display:none; }
     .contact-panel{ padding: 40px 24px; }
   }
- 
+
   /* ---------- RESUME STUDIO ---------- */
   .nav-right{ display:flex; align-items:center; gap:10px; }
   button.nav-cta{ background:none; color:inherit; font:inherit; font-size:0.87rem; cursor:pointer; }
@@ -370,11 +370,11 @@
     .rs-stage{ padding:10px; }
   }
   @media (prefers-reduced-motion: reduce){ .rs{ transition:none; transform:none; } }
- 
+
 </style>
 </head>
 <body>
- 
+
 <nav>
   <div class="wrap">
     <div class="brand">AMISHA PATEL<span class="dot"></span></div>
@@ -385,7 +385,7 @@
     <div class="nav-right"><button class="nav-cta" type="button" data-rs-open>Résumé</button><a class="nav-cta" href="#contact">Contact</a></div>
   </div>
 </nav>
- 
+
 <header class="hero" id="hero">
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
@@ -454,7 +454,7 @@
     </div>
   </div>
 </section>
- 
+
 <section id="experience">
   <div class="wrap">
     <div class="section-head reveal" style="--section-color:#FF8A65">
@@ -486,7 +486,7 @@
     </div>
   </div>
 </section>
- 
+
 <section id="contact">
   <div class="wrap">
     <div class="contact-panel reveal">
@@ -502,14 +502,14 @@
     </div>
   </div>
 </section>
- 
+
 <footer>
   <div class="wrap">
     <span>© 2026 Amisha Patel</span>
     <span>Built with .NET &amp; Angular expertise</span>
   </div>
 </footer>
- 
+
 <script>
   (function(){
     var targets = document.querySelectorAll('.reveal');
@@ -526,7 +526,7 @@
       }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
       targets.forEach(function(el){ observer.observe(el); });
     }
- 
+
     var hero = document.getElementById('hero');
     var glow = document.getElementById('glowCursor');
     if(hero && glow && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
@@ -539,9 +539,9 @@
       hero.addEventListener('mouseleave', function(){ glow.style.opacity = '0'; });
     }
   })();
- 
+
 </script>
- 
+
 <div class="rs" id="rs" role="dialog" aria-modal="true" aria-labelledby="rsT" aria-hidden="true">
   <div class="rs-bar">
     <div>
@@ -573,7 +573,7 @@
     <div class="rs-stage"><iframe id="rsFrame" title="Résumé preview"></iframe></div>
   </div>
 </div>
- 
+
 <script>
   (function(){
     var rs=document.getElementById('rs'), frame=document.getElementById('rsFrame'), data=null, lastFocus=null;
@@ -628,7 +628,7 @@
     }
     frame.addEventListener('load',function(){ try{ frame.contentDocument.designMode='on'; }catch(e){} });
     var fname=function(){ return data.name.replace(/\s+/g,'_')+'_Resume'; };
- 
+
     document.getElementById('rsPdf').addEventListener('click',function(){
       var old=document.title; document.title=fname();
       frame.contentWindow.focus(); frame.contentWindow.print();
@@ -643,7 +643,7 @@
       document.body.appendChild(a); a.click(); a.remove();
       setTimeout(function(){ URL.revokeObjectURL(a.href); },1000);
     });
- 
+
     function openRs(){
       lastFocus=document.activeElement; render();
       rs.classList.add('open'); rs.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';
@@ -659,6 +659,6 @@
     rs.querySelectorAll('input').forEach(function(i){ i.addEventListener('change',render); });
   })();
 </script>
- 
+
 </body>
 </html>
